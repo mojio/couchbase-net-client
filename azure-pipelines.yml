@@ -11,12 +11,12 @@ variables:
   versionStr: '2.7.21-MOJIO-$(Build.BuildNumber)'
 
 steps:
-- task: DotNetCoreCLI@2
-  displayName: 'Build'
-  inputs:
-    command: 'build'
-    projects: 'Src/couchbase-net-client.sln'
-    arguments: '--configuration $(buildConfiguration)'
+# - task: DotNetCoreCLI@2
+#   displayName: 'Build'
+#   inputs:
+#     command: 'build'
+#     projects: 'Src/couchbase-net-client.sln'
+#     arguments: '--configuration $(buildConfiguration)'
 
 # - task: DotNetCoreCLI@2
 #   displayName: 'Test'
@@ -31,7 +31,7 @@ steps:
     command: 'pack'
     packagesToPack: 'Src/Couchbase/Couchbase.csproj'
     configuration: '$(buildConfiguration)'
-    nobuild: true
+    # nobuild: true
     includesymbols: true
     includesource: true
     versioningScheme: 'byEnvVar'
