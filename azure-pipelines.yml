@@ -15,21 +15,21 @@ steps:
   displayName: 'Build'
   inputs:
     command: 'build'
-    projects: 'couchbase-net-client.sln'
+    projects: 'Src/couchbase-net-client.sln'
     arguments: '--configuration $(buildConfiguration)'
 
 # - task: DotNetCoreCLI@2
 #   displayName: 'Test'
 #   inputs:
 #     command: 'test'
-#     projects: 'tests/Couchbase.UnitTests/Couchbase.UnitTests.csproj'
+#     projects: 'src/Couchbase.UnitTests/Couchbase.UnitTests.csproj'
 #     arguments: '--verbosity normal'
 
 - task: DotNetCoreCLI@2
   displayName: 'Package NuGet'
   inputs:
     command: 'pack'
-    packagesToPack: 'src/Couchbase/Couchbase.csproj'
+    packagesToPack: 'Src/Couchbase/Couchbase.csproj'
     configuration: '$(buildConfiguration)'
     nobuild: true
     includesymbols: true
